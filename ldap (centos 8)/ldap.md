@@ -4439,9 +4439,9 @@ The command is used to add data to an LDAP directory by connecting to the LDAP s
 
 - <b>Note :- To use apache Directory studio you need to install JDK.<br>
 
-![Alt text](/images/apache%20directory%20studio%20installed.png)
+![Alt text](./images/apache%20directory%20studio%20installed.png)
 
-![](images/need%20java%20to%20run%20studio.png)<br>
+![](.images/need%20java%20to%20run%20studio.png)<br>
 
 
 
