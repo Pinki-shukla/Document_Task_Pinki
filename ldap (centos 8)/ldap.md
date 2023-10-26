@@ -71,7 +71,7 @@ On your CentOS machine, install LDAP utilities using the following command:
 ```
 sudo yum install openldap-clients
 ```
-![Alt text](/images/ldap%20utils.png)
+![Alt text](./images/ldap%20utils.png)
 
 # Step 2: Check and Create Suffix
  if suffix not create then create with this command
