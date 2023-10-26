@@ -4477,7 +4477,7 @@ java --version
 
 - <b>Port:</b> Write port which used while creating ldap server.<br>
 
-![](.connection%20in%20apache%20studio%201.png)<br>
+![](.images/connection%20in%20apache%20studio%201.png)<br>
 
 - <b>Bind DN or user :</b> write cn=Directory Manager.<br>
 
