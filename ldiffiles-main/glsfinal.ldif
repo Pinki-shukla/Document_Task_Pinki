@@ -1,0 +1,193 @@
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isDormant-oid NAME 'isDormant' DESC 'Is Entity Active' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glNumber-oid NAME 'glNumber' DESC 'GL Number' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( cbsMirrorGLcode-oid NAME 'cbsMirrorGLcode' DESC 'GL Number' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( bscDesc-oid NAME 'bscDesc' DESC 'Branch Description' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( cbsCustomerId-oid NAME 'cbsCustomerId' DESC 'Partner Customer ID in CBS' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glEntry-oid NAME 'glEntry' DESC 'GL Entry' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glDept-oid NAME 'glDept' DESC 'GL Department' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( bscCode-oid NAME 'bscCode' DESC 'Branch Description Code' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( pcCode-oid NAME 'pcCode' DESC 'PC Code' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( pcName-oid NAME 'pcName' DESC 'PC Name' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( spcCode-oid NAME 'spcCode' DESC 'SPC Code' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( spcName-oid NAME 'spcName' DESC 'SPC Name' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( sbucCode-oid NAME 'sbucCode' DESC 'SBUC Code' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( sbucName-oid NAME 'sbucName' DESC 'SBUC Name' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glRunningSequence-oid NAME 'glRunningSequence' DESC 'GL Running Sequence' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isActive-oid NAME 'isActive' DESC 'Is Entity Active' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( creationDate-oid NAME 'creationDate' DESC 'Entity Creation Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( creator-oid NAME 'creator' DESC 'The user that created the Entity,DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastActivationDate-oid NAME 'lastActivationDate' DESC 'Entity Last Activation Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastActivationUser-oid NAME 'lastActivationUser' DESC 'The user that last Activated the PtaPartner' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isGLrestricted-oid NAME 'isGLrestricted' DESC 'Is GL Restricted' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isFullySettledatEoD-oid NAME 'isFullySettledatEoD' DESC 'Does the GL have to be settled fully at EoD' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isFullyTransferredatSoD-oid NAME 'isFullyTransferredatSoD' DESC 'Does the GL have to be transferred fully at SoD' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isLienAppliedAtEoD-oid NAME 'isLienAppliedAtEoD' DESC 'Do Lien Calculations apply at EoD' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isClosed-oid NAME 'isClosed' DESC 'Is GL Closed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( activationAuditTrail-oid NAME 'activationAuditTrail' DESC 'activationAuditTrail' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( partnerLastDeActivationDate-oid NAME 'partnerLastDeActivationDate' DESC 'Partner Last Deactivation Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastDeActivationUser-oid NAME 'lastDeActivationUser' DESC 'The user that last Deactivated the Entity' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( deactivationAuditTrail-oid NAME 'deactivationAuditTrail' DESC 'deactivationAuditTrail' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glLastRestrictionApplyDate-oid NAME 'glLastRestrictionApplyDate' DESC 'GL Last Restriction Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glLastRestrictionApplyUser-oid NAME 'glLastRestrictionApplyUser' DESC 'The user that last Restricted the GL' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glRestrictionApplyAuditTrail-oid NAME 'glRestrictionApplyAuditTrail' DESC 'Account Previous Restriction Removal Date/Time, User and RestrictionId' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glLastRestrictionRemovalDate-oid NAME 'glLastRestrictionRemovalDate' DESC 'Account Last Restriction Removal Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glLastRestrictionRemovalUser-oid NAME 'glLastRestrictionRemovalUser' DESC 'The user that last Removed Restriction from the Account' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( glMinBalanceFixed-oid NAME 'glMinBalanceFixed' DESC 'Fixed Minimum Balance Amount' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( id-oid NAME 'id' DESC 'id Number' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( finoPtaPlusGl-oid NAME 'finoPtaPlusGl' SUP top STRUCTURAL MUST ( id $ glNumber $ description $ cbsMirrorGLcode $ cbsCustomerId $ glEntry $ glDept $ bscCode $ bscDesc $ pcCode $ pcName $ spcCode $ spcName $ sbucCode $ sbucName $ glRunningSequence $ isActive $ creationDate $ creator $ isGLrestricted ) MAY ( isFullySettledatEoD $ isFullyTransferredatSoD $ isLienAppliedAtEoD $ isClosed $ activationAuditTrail $ lastDeActivationDate $ lastDeActivationUser $ deactivationAuditTrail $ glLastRestrictionApplyDate $ glLastRestrictionApplyUser $ isDormant $ glRestrictionApplyAuditTrail $ glLastRestrictionRemovalDate $ glLastRestrictionRemovalUser $ glMinBalanceFixed $ lastActivationDate $ lastActivationUser ) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=idgls,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: idgls
+dnatype: id
+dnafilter: (objectclass=finoPtaPlusGl)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1

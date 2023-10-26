@@ -1,0 +1,378 @@
+version: 1
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( admin-oid NAME 'admin' SUP top STRUCTURAL MUST (email $ userName $ primaryMobile  $ firstName $ lastName $ address $ userPassword $ userStatus  ) MAY ( ) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: dc=admin,cn=schema
+objectClass: organizationalUnit
+objectClass: top
+objectClass: domain
+ou: admin
+description: admin
+
+dn: email=admin1@fino.com,dc=admin,cn=schema
+changetype: add
+objectClass: top
+objectClass: admin
+email: admin1@fino.com
+userName: admin1
+primaryMobile: 1212121212
+firstName: admin1
+lastName: fino
+address: fino
+userPassword: Redhat@1
+userStatus: Active
+
+dn: email=admin2@fino.com,dc=admin,cn=schema
+changetype: add
+objectClass: top
+objectClass: admin
+email: admin2@fino.com
+userName: admin2
+primaryMobile: 2121212121
+firstName: admin2
+lastName: fino
+address: fino
+userPassword: Redhat@2
+userStatus: Active
+
+dn: dc=FinoPtaPlus,dc=com
+objectClass: domain
+objectClass: top
+dc: FinoPtaPlus
+description: FinoPtaPlus database
+aci: (targetattr != "aci")(version 3.0; aci "rootdse anon read access"; allo
+ w(read,search,compare) userdn="ldap:///email=admin2@fino.com,dc=admin,cn=sc
+ hema";)
+aci: (targetattr = "*")(version 3.0; aci "rootdse anon read access"; allo
+ w(read,search,compare,write,all) userdn="ldap:///email=admin1@fino.com,dc=a
+ dmin,cn=schema";)
+
+dn: ou=states,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: states
+description: states list
+
+dn: ou=accounts,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: accounts
+description: accounts details
+
+dn: ou=finoPtaPlusGl,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: finoPtaPlusGl
+description: general ledger details
+
+dn: ou=businessTypes,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: businessTypes
+description: type of business master
+aci: (targetattr = "*")(version 3.0; aci "read"; allow(read,search,compare) 
+ groupdn="ldap:///cn=partneradmin,ou=roles,dc=finoptaplus,dc=com  || ldap://
+ /cn=backoffice,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: ou=banks,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: banks
+description: bank details
+
+dn: ou=transactionGroups,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: transactionGroups
+description: transactionGroup details
+
+dn: ou=transactionTypes,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: transactionTypes
+description: transactionType details
+
+dn: ou=errorCodeMasters,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: errorCodeMasters
+description: errorCodeMasters
+
+dn: ou=holdCodeMasters,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: holdCodeMasters
+description: holdCodeMasters
+
+dn: ou=restrictionCodeMasters,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: restrictionCodeMasters
+description: restrictionCodeMasters
+
+dn: ou=actHoldsDtls,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: actHoldsDtls
+description: actHoldsDtls
+
+dn: ou=accountRestrictions,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: accountRestrictions
+description: accountRestrictions
+
+dn: ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: ptapluserrorcode
+description: ptapluserrorcode
+aci: (targetattr != "aci")(version 3.0; aci "rootdse anon read access"; allo
+ w(read,search,compare) userdn="ldap:///uid=admin,ou=serviceAccounts,dc=fino
+ ptaplus,dc=com";)
+
+dn: ou=merchants,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: merchants
+aci: (targetattr = "*")(version 3.0; aci "search all merchants"; allow(read,
+ search,compare) groupdn="ldap:///cn=admin,ou=roles,dc=finoptaplus,dc=com";)
+aci: (targetattr = "*")(version 3.0; aci "write"; allow(write,add) groupdn="
+ ldap:///cn=partneradmin,ou=roles,dc=finoptaplus,dc=com";)
+aci: (targetattr = "aci")(version 3.0; aci "write"; allow(write) groupdn="ld
+ ap:///cn=backoffice,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: ou=active,ou=merchants,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: active
+
+dn: ou=inactive,ou=merchants,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: inactive
+
+dn: ou=statuses,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: statuses
+description: statuses
+aci: (targetattr = "*")(version 3.0; aci "read"; allow(read,search,compare) 
+ groupdn="ldap:///cn=partneradmin,ou=roles,dc=finoptaplus,dc=com  || ldap://
+ /cn=admin,ou=roles,dc=finoptaplus,dc=com  || ldap:///cn=backoffice,ou=roles
+ ,dc=finoptaplus,dc=com";)
+
+dn: ou=groups,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=finousers,ou=groups,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: posixGroup
+objectClass: top
+cn: finousers
+gidNumber: 99999
+uniqueMember: uid=admin,ou=serviceAccounts,dc=finoptaplus,dc=com
+uniqueMember: uId=admin1,ou=activeusers,ou=users,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "admin can add members t
+ o finousers"; allow(write) groupdn="ldap:///cn=admin,ou=roles,dc=finoptaplu
+ s,dc=com";)
+
+dn: cn=finopartners,ou=groups,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: posixGroup
+objectClass: top
+cn: finopartners
+gidNumber: 99999
+aci: (targetattr = "*")(version 3.0; aci "admin can add add partner groups";
+  allow(write,add) groupdn="ldap:///cn=backoffice,ou=roles,dc=finoptaplus,dc
+ =com";)
+
+dn: ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: roles
+
+dn: cn=admin,ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: top
+cn: admin
+uniqueMember: statusCode=Active,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Inctive,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: uid=admin,ou=serviceAccounts,dc=finoptaplus,dc=com
+uniqueMember: uId=admin1,ou=activeusers,ou=users,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "write"; allow(write) gr
+ oupdn="ldap:///cn=admin,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: cn=backoffice,ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: top
+cn: backoffice
+uniqueMember: statusCode=Active,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Inactive,ou=statuses,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "write"; allow(write) gr
+ oupdn="ldap:///cn=admin,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: cn=partneradmin,ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: top
+cn: partneradmin
+uniqueMember: statusCode=Active,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Blocked,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Dormant,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Inactive,ou=statuses,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "write"; allow(write) gr
+ oupdn="ldap:///cn=backoffice,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: cn=partnerops,ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: top
+cn: partnerops
+uniqueMember: statusCode=Active,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Blocked,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Inactive,ou=statuses,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "write"; allow(write) gr
+ oupdn="ldap:///cn=partneradmin,ou=roles,dc=finoptaplus,dc=com || ldap:///cn
+ =backOffice,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: cn=merchant,ou=roles,dc=FinoPtaPlus,dc=com
+objectClass: groupOfNames
+objectClass: groupOfUniqueNames
+objectClass: nsMemberOf
+objectClass: top
+cn: merchant
+uniqueMember: statusCode=Active,ou=statuses,dc=finoptaplus,dc=com
+uniqueMember: statusCode=Inactive,ou=statuses,dc=finoptaplus,dc=com
+aci: (targetattr = "uniquemember")(version 3.0; aci "write"; allow(write) gr
+ oupdn="ldap:///cn=partneradmin,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: ou=users,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+aci: (targetattr = "*")(targetfilter="memberof=cn=partneradmin,ou=roles,dc=f
+ inoptaplus,dc=com")(version 3.0; aci "search all users"; allow(read,search,
+ compare) groupdn="ldap:///cn=backoffice,ou=roles,dc=finoptaplus,dc=com";)
+aci: (targetattr = "*")(version 3.0; aci "search all users"; allow(read,sear
+ ch,compare) groupdn="ldap:///cn=admin,ou=roles,dc=finoptaplus,dc=com";)
+aci: (targetattr = "*")(version 3.0; aci "write"; allow(write,add) groupdn="
+ ldap:///cn=admin,ou=roles,dc=finoptaplus,dc=com || ldap:///cn=backoffice,ou
+ =roles,dc=finoptaplus,dc=com || ldap:///cn=partneradmin,ou=roles,dc=finopta
+ plus,dc=com";)
+aci: (targetattr = "lastModifiedOn || lastModifiedBy || primaryMobile || ema
+ il || profileImage")(targetfilter="(memberof=cn=partnerops,ou=roles,dc=fino
+ ptaplus,dc=com)")(version 3.0; aci "write"; allow(write) groupdn="ldap:///c
+ n=partnerops,ou=roles,dc=finoptaplus,dc=com";)
+aci: (targetattr = "userPassword || firstLogin")(version 3.0; aci "write"; a
+ llow(write) userdn="ldap:///self";)
+
+dn: ou=activeusers,ou=users,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: activeusers
+
+dn: ou=inactiveusers,ou=users,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: inactiveusers
+
+dn: uId=admin1,ou=activeusers,ou=users,dc=FinoPtaPlus,dc=com
+objectClass: finoUsers
+objectClass: top
+createdDate: 20230803000000.000Z
+email: finouser1@gmail.com
+firstLogin: FALSE
+firstName: finouser1
+id: 5
+lastModifiedBy: modifiedBy=Admin1
+lastModifiedOn: 20230803004400.367Z
+lastName: kumar
+memberOf: cn=admin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=finousers,ou=groups,dc=FinoPtaPlus,dc=com
+uid: admin1
+userPassword: Redhat@1
+createdBy: cn=Directory Manager
+primaryMobile: 1000000006
+profileImage: abc.png
+
+dn: ou=serviceAccounts,dc=FinoPtaPlus,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: serviceAccounts
+description: serviceAccounts
+aci: (targetattr = "*")(version 3.0; aci "write"; allow(write,add) groupdn="
+ ldap:///cn=backoffice,ou=roles,dc=finoptaplus,dc=com";)
+
+dn: uid=admin,ou=serviceAccounts,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: serviceAccount
+objectClass: top
+memberOf: cn=admin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=finousers,ou=groups,dc=FinoPtaPlus,dc=com
+uid: admin
+userPassword: redhat
+
+dn: uid=backoffice,ou=serviceAccounts,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: serviceAccount
+objectClass: top
+memberOf: cn=backoffice,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=finousers,ou=groups,dc=FinoPtaPlus,dc=com
+uid: backoffice
+userPassword: redhat
+
+dn: statusCode=Active,ou=statuses,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: statusMaster
+objectClass: top
+id: 1
+memberOf: cn=admin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=backoffice,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=merchant,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=partneradmin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=partnerops,ou=roles,dc=FinoPtaPlus,dc=com
+statusCode: Active
+
+dn: statusCode=Inactive,ou=statuses,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: statusMaster
+objectClass: top
+id: 2
+memberOf: cn=backoffice,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=merchant,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=partneradmin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=partnerops,ou=roles,dc=FinoPtaPlus,dc=com
+statusCode: Inactive
+
+dn: statusCode=Blocked,ou=statuses,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: statusMaster
+objectClass: top
+id: 3
+memberOf: cn=partneradmin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=partnerops,ou=roles,dc=FinoPtaPlus,dc=com
+statusCode: Blocked
+
+dn: statusCode=Dormant,ou=statuses,dc=FinoPtaPlus,dc=com
+objectClass: nsMemberOf
+objectClass: statusMaster
+objectClass: top
+id: 4
+memberOf: cn=partneradmin,ou=roles,dc=FinoPtaPlus,dc=com
+statusCode: Dormant

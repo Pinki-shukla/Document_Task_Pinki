@@ -1,0 +1,171 @@
+#partners
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( userName-oid NAME 'userName' DESC 'userName, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( primaryMobile-oid NAME 'primaryMobile' DESC 'primaryMobile,telephone number' EQUALITY telephoneNumberMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.50 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( businessName-oid NAME 'businessName' DESC 'businessName, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( primaryAccount-oid NAME 'primaryAccount' DESC 'primaryAccount, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountHolderName-oid NAME 'accountHolderName' DESC 'accountHolderName, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( phoneNumber-oid NAME 'phoneNumber' DESC 'phoneNumber,telephone number 'EQUALITY telephoneNumberMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.50 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( gst-oid NAME 'gst' DESC 'gst, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isVerified-oid NAME 'isVerified' DESC 'isVerified, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isShowGLSettlement-oid NAME 'isShowGLSettlement' DESC 'isShowGLSettlement, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isGLAccount-oid NAME 'isGLAccount' DESC 'isGLAccount, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isExternal-oid NAME 'isExternal' DESC 'isExternal, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isRegistered-oid NAME 'isRegistered' DESC 'isRegistered, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isFisSwitch-oid NAME 'isFisSwitch' DESC 'isFisSwitch, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( pan-oid NAME 'pan' DESC 'pan, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( securityStamp-oid NAME 'securityStamp' DESC 'securityStamp, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( twoFactorEnabled-oid NAME 'twoFactorEnabled' DESC 'twoFactorEnabled, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lockoutEnd-oid NAME 'lockoutEnd' DESC 'lockoutEnd, time' EQUALITY generalizedTimeMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lockoutEnabled-oid NAME 'lockoutEnabled' DESC 'lockoutEnabled, boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accessFailedCount-oid NAME 'accessFailedCount' DESC 'accessFailedCount, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( userStatus-oid NAME 'userStatus' DESC 'userStatus, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( fisUserId-oid NAME 'fisUserId' DESC 'fisUserId, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'fisUserId' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( fisPassword-oid NAME 'fisPassword' DESC 'fisPassword, octetString' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( fisClientId-oid NAME 'fisClientId' DESC 'fisClientId , IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( fisCustomerNumber-oid NAME 'fisCustomerNumber' DESC 'fisCustomerNumber, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (panImage-oid NAME 'panImage' DESC 'panImage,IA5string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (profileImage-oid NAME 'profileImage' DESC 'profileImage,IA5string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (gstImage-oid NAME 'gstImage' DESC 'gstImage,IA5string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (prefix-oid NAME 'prefix' DESC ' prefix,IA5string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (phoneNumberConfirmed-oid NAME 'phoneNumberConfirmed' DESC ' phoneNumberConfirmed,boolean' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 EQUALITY booleanMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (emailConfirmed-oid NAME 'emailConfirmed' DESC ' emailConfirmed,boolean' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 EQUALITY booleanMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( id-oid NAME 'id' DESC 'id,number' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( createdBy-oid NAME 'createdBy' DESC 'createdBy,string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=id,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: id
+dnatype: id
+dnafilter: (objectclass=partners)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1

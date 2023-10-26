@@ -1,0 +1,44 @@
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( finoUsers-oid NAME 'finoUsers' SUP top STRUCTURAL MUST (id $ userId $ firstName $ lastName $ userPassword $ primaryMobile $ lastModifiedBy $ lastModifiedOn $ createdDate $ createdBy $ firstLogin $ email ) MAY ( profileImage $ memberOf $ uniquemember) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( partners-oid NAME 'partners' SUP top STRUCTURAL MUST (id $ userId $ primaryMobile $ firstName $ lastName $ typeOfBusiness $ address $ userPassword $ mccCode $ ifsc $ isGLType $ primaryAccount $ accountHolderName $ gst $ gstImage $ createdDate $ createdBy $ lastModifiedBy $ lastModifiedOn $ VPAPrefixid $ settlementAccount $ accountPVD $ firstLogin ) MAY ( businessName $ email $ virtualAddress $ pan $ panImage $ profileImage $ memberOf $ uniquemember) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( partnerOps-oid NAME 'partnerOps' SUP top STRUCTURAL MUST (id $ userId $ firstName $ lastName $ email $  userPassword $ primaryMobile $ lastModifiedBy $ lastModifiedOn $ createdDate $ createdBy $ firstLogin ) MAY ( profileImage $ memberOf $ uniquemember) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( merchants-oid NAME 'merchants' SUP top STRUCTURAL MUST ( id $ institutionId $ mobileNo $ accountType $  name $ userId $ emailId $ address $ merchantBusinessName $ merchantCategory $ linkedBankAccount $ ifsc $ accountNo $ accountPVD $ status $ statusDateTime $ dealerCode $ sid $ tid $ mid $ registrationDateTime $ merchantId  $ merchantStatus $  merchantAggregator $ onBoardingType $ merchantGenerate $ merchantOwnType $ settlementAccount $ franchise $ brand $ merchantType $ createdDate $ createdBy $ lastModifiedBy $ lastModifiedOn ) MAY ( activeVirtualAddress $ inactiveVirtualAddress $ firstName $ lastName $ alternateMobile $ isNotification $ memberOf $ uniquemember) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( serviceAccount-oid NAME 'serviceAccount' SUP top STRUCTURAL MUST (userId $ userPassword ) MAY () X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=partnerOpsId,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: userId
+dnatype: id
+dnafilter: (objectclass=partnerOps)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1
+
+dn: cn=userId,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: userId
+dnatype: id
+dnafilter: (objectclass=finoUsers)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1
+

@@ -1,0 +1,159 @@
+
+#common
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastModifiedOn-oid NAME 'lastModifiedOn' DESC 'lastModifiedOn, time' EQUALITY generalizedTimeMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( firstName-oid NAME 'firstName' DESC 'firstName,stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastName-oid NAME 'lastName' DESC 'lastName,stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant bank
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( id-oid NAME 'id' DESC 'id, Integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant state errormaster holdmaster restrictionmaster account
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (createdDate-oid NAME 'createdDate' DESC 'created Date, GeneralizedTime' EQUALITY generalizedTimeMatch  SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ))
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( alternateMobile-oid NAME 'alternateMobile' DESC 'alternate,telephone number' EQUALITY teleMatch SUBSTR telephoneNumberSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.50 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( email-oid NAME 'email' DESC 'email,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( virtualAddress-oid NAME 'virtualAddress' DESC 'virtualAddress,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( mccCode-oid NAME 'mccCode' DESC 'mccCode of merchant' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant bank gls
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( ifsc-oid NAME 'ifsc' DESC 'ifsc, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+# partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( address-oid NAME 'address' DESC 'address, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#merchant bank
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( bankName-oid NAME 'bankName' DESC 'bankName,IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+# account 
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountNo-oid NAME 'accountNo' DESC 'accountNo,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+# errormaster holdmaster ristrictionmaster account hold accountrestriction
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( creator-oid NAME 'creator' DESC 'Creator of Entity, DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#partner merchant
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( typeOfBusiness-oid NAME 'typeOfBusiness' DESC 'typeOfBusiness, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#accounts gls transationType transactionGroup
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isActive-oid NAME 'isActive' DESC 'isActive, Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#+accounthold hold
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( description-oid NAME 'description' DESC 'Description, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isDormant-oid NAME 'isDormant' DESC 'Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( cifId-oid NAME 'cifId' DESC 'DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isClosed-oid NAME 'isClosed' DESC 'Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#new_attributes
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isGLType-oid NAME 'isGLType' DESC 'isGlType,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (emailId-oid NAME 'emailId' DESC 'emailId,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( VPAPrefixid-oid NAME 'VPAPrefixid' DESC 'VPAPrefixid,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( firstLogin-oid NAME 'firstLogin' DESC 'firstLogin,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: (merchantBusinessName-oid NAME 'merchantBusinessName' DESC 'merchantBusinessName,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( activeVirtualAddress-oid NAME 'activeVirtualAddress' DESC 'activeVirtualAddress,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( inactiveVirtualAddress-oid NAME 'inactiveVirtualAddress' DESC 'inactiveVirtualAddress,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( createdBy-oid NAME 'createdBy' DESC 'createdBy,string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )

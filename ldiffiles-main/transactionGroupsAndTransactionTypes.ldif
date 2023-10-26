@@ -1,0 +1,59 @@
+
+# 4.transaction Group
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( transactionGroupId-oid NAME 'transactionGroupId' DESC 'transactionGroupId, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( transactionGroupsUid-oid NAME 'transactionGroupsUid' DESC 'integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( transactionGroups-oid NAME 'transactionGroups' SUP top STRUCTURAL MUST (transactionGroupsUid $ createdDate $ creator $ isActive $ lastActivationUser $ lastActivationDate $ description $ transactionGroupId) MAY ( member) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=transactionGroupsUid,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: transactionsGroupsUid
+dnatype: transactionGroupsUid
+dnafilter: (objectclass=transactionGroups)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1
+
+# 5.transaction type
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( transactionType-oid NAME 'transactionType' DESC 'transactionType, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( transactionTypeName-oid NAME 'transactionTypeName' DESC 'transactionTypeName, IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( transactionTypeUid-oid NAME 'transactionTypeUid' DESC 'integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( transactionTypes-oid NAME 'transactionTypes' SUP top STRUCTURAL MUST (transactionTypeUid $ transactionTypeName  $ createdDate $ creator $ isActive $ lastActivationUser $ lastActivationDate $ description $ transactionType) MAY (member) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=transactionTypesUid,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: transactionTypeUid
+dnatype: transactionTypeUid
+dnafilter: (objectclass=transactionTypes)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1

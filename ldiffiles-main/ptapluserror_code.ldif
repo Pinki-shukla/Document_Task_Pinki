@@ -1,0 +1,412 @@
+version: 1
+
+dn: PTAErrorcode=100,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: null
+ErrorSource: LDAP
+HTTPCode: 200
+NativeErrorCode: 0
+PTAErrorcode: 100
+StatusCode: 200
+HTTPCodeDescription: Request has succeeded
+NativeErrorDescription: The request was successful(Example-Item has been suc
+ cessfully added to LDAP )
+NativeErrorMessage: LDAP_SUCCESS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=101,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: CONSTRAINT_VIOLATION
+ErrorSource: LDAP
+HTTPCode: 406
+NativeErrorCode: 19
+PTAErrorcode: 101
+StatusCode: 200
+HTTPCodeDescription: NOT ACCEPTABLE
+NativeErrorDescription: Some constraint has been violated(Example- Attribute
+  which is marked as MUST, should not be null.)
+NativeErrorMessage: LDAP_CONSTRAINT_VIOLATION
+TroubleshootMessage: null
+
+dn: PTAErrorcode=102,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: ENTRY_ALREADY_EXISTS
+ErrorSource: LDAP
+HTTPCode: 208
+NativeErrorCode: 68
+PTAErrorcode: 102
+StatusCode: 200
+HTTPCodeDescription: ALREADY EXISTS
+NativeErrorDescription: Entry already present.(Example- DN should be unique)
+NativeErrorMessage: LDAP_ALREADY_EXISTS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=103,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INVALID_SYNTAX
+ErrorSource: LDAP
+HTTPCode: 400
+NativeErrorCode: 21
+PTAErrorcode: 103
+StatusCode: 200
+HTTPCodeDescription: BAD REQUEST
+NativeErrorDescription: An attribute value that is not valid was specified.(
+ Input type mismatch, Example-If attribute is of Integer type then input typ
+ e should also be of Integer type.)
+NativeErrorMessage: LDAP_INVALID_SYNTAX
+TroubleshootMessage: null
+
+dn: PTAErrorcode=104,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: NO_SUCH_OBJECT
+ErrorSource: LDAP
+HTTPCode: 404
+NativeErrorCode: 20
+PTAErrorcode: 104
+StatusCode: 200
+HTTPCodeDescription: NOT FOUND
+NativeErrorDescription: The specified object does not exist in the directory
+ (No matching record found,Example-Entry which needs to update is absent. )
+NativeErrorMessage: NO_SUCH_OBJECT
+TroubleshootMessage: null
+
+dn: PTAErrorcode=105,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: TIMEOUT
+ErrorSource: LDAP
+HTTPCode: 504
+NativeErrorCode: 55
+PTAErrorcode: 105
+StatusCode: 200
+HTTPCodeDescription: Timed out
+NativeErrorDescription: A time limit was exceeded while waiting for a result
+ .(No response recieved,LDAP request is made by a client to a server and the
+  server does not respond for some reason)
+NativeErrorMessage: LDAP_TIMEOUT
+TroubleshootMessage: null
+
+dn: PTAErrorcode=106,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: CONNECT ERROR
+ErrorSource: LDAP
+HTTPCode: 503
+NativeErrorCode: 91
+PTAErrorcode: 106
+StatusCode: 200
+HTTPCodeDescription: CONNECTION ERROR
+NativeErrorDescription: The server is temporarily unable to service your req
+ uest due to maintenance downtime or capacity problems.(Service temporarily 
+ unavailable)
+NativeErrorMessage: LDAP_CONNECT_ERROR
+TroubleshootMessage: null
+
+dn: PTAErrorcode=107,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: CHANGE_NOT_ALLOWED
+ErrorSource: EXCEPTION
+HTTPCode: 406
+NativeErrorCode: 101
+PTAErrorcode: 107
+StatusCode: 200
+HTTPCodeDescription: Not Acceptable
+NativeErrorDescription: Non accessible field.Example- Fields like lastModifi
+ edDate,CreatedDate are non accessible field we cannot change it.
+NativeErrorMessage: CHANGE_NOT_ALLOWED
+TroubleshootMessage: null
+
+dn: PTAErrorcode=108,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: NULL_POINTER_EXCEPTION
+ErrorSource: EXCEPTION
+HTTPCode: 500
+NativeErrorCode: 102
+PTAErrorcode: 108
+StatusCode: 200
+HTTPCodeDescription: Internal Server Error
+NativeErrorDescription:: V2hlbiB3ZSB0cnkgdG8gbW9kaWZ5IHRoZSBmaWVsZCBmb3IgYSB
+ udWxsIG9iamVjdCA=
+NativeErrorMessage: NULL_POINTER_EXCEPTION
+TroubleshootMessage: null
+
+dn: PTAErrorcode=109,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: DUPLICATE_VALUE
+ErrorSource: EXCEPTION
+HTTPCode: 409
+NativeErrorCode: 103
+PTAErrorcode: 109
+StatusCode: 200
+HTTPCodeDescription: Conflict in values
+NativeErrorDescription:: V2hlbiB3ZSB0cnkgdG8gZW50ZXIgc2FtZSB2YWx1ZSB3aGljaCB
+ pcyBhbHJlYWR5IGluIERCLiA=
+NativeErrorMessage: DUPLICATE_VALUE
+TroubleshootMessage: null
+
+dn: PTAErrorcode=110,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: NOT_IN_MASTERS
+ErrorSource: EXCEPTION
+HTTPCode: 404
+NativeErrorCode: 104
+PTAErrorcode: 110
+StatusCode: 200
+HTTPCodeDescription: NOT FOUND
+NativeErrorDescription: When we try to entry value which is not avaliable in
+  masters.Example - Suppose there is a master for typesOfBusiness and if we 
+ will enter value which is not in master then we get this exception.
+NativeErrorMessage: NOT_IN_MASTERS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=111,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INVALID_CONTROLS
+ErrorSource: EXCEPTION
+HTTPCode: 400
+NativeErrorCode: 105
+PTAErrorcode: 111
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: When we pass wrong controls example- while sending s
+ ort key we pass firstName with spelling mistake in that case this happens.
+NativeErrorMessage: INVALID_CONTROLS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=112,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INVALID_ATTRIBUTE_SYNTAX
+ErrorSource: EXCEPTION
+HTTPCode: 400
+NativeErrorCode: 106
+PTAErrorcode: 112
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: Input type mismatch, Example-If attribute is of Inte
+ ger type then input type should also be of Integer type.
+NativeErrorMessage: INVALID_ATTRIBUTE_SYNTAX
+TroubleshootMessage: null
+
+dn: PTAErrorcode=113,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: VALIDATION_FAILURE
+ErrorSource: EXCEPTION
+HTTPCode: 403
+NativeErrorCode: 107
+PTAErrorcode: 113
+StatusCode: 200
+HTTPCodeDescription: Forbidden
+NativeErrorDescription: If we have put validation in phone number that it sh
+ ould be of 10 digits and user is providing 9 digits value in that case ther
+ e will be a validation failure.
+NativeErrorMessage: VALIDATION_FAILURE
+TroubleshootMessage: null
+
+dn: PTAErrorcode=114,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage:: SlNPTl9QQVJTSU5HX0VYQ0VQVElPTiA=
+ErrorSource: EXCEPTION
+HTTPCode: 400
+NativeErrorCode: 108
+PTAErrorcode: 114
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: Invalid JSON format is given
+NativeErrorMessage: JSON_PARSING_EXCEPTION
+TroubleshootMessage: null
+
+dn: PTAErrorcode=115,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: UNKNOWN_RESPONSE
+ErrorSource: EXCEPTION
+HTTPCode: 400
+NativeErrorCode: 109
+PTAErrorcode: 115
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: Error which is not known
+NativeErrorMessage: UNKNOWN_RESPONSE
+TroubleshootMessage: null
+
+dn: PTAErrorcode=116,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: ERR_CONNECTION_REFUSED
+ErrorSource: EXCEPTION
+HTTPCode: 400
+NativeErrorCode: 110
+PTAErrorcode: 116
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: Using wrong IP address in connection string
+NativeErrorMessage: ERR_CONNECTION_REFUSED
+TroubleshootMessage: null
+
+dn: PTAErrorcode=117,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: AUTH_KEY_EXPIRED
+ErrorSource: SERVICECALL
+HTTPCode: 402
+NativeErrorCode: 101
+PTAErrorcode: 117
+StatusCode: 200
+HTTPCodeDescription: time limit exceeded
+NativeErrorDescription: Auth key expired
+NativeErrorMessage: AUTH_KEY_EXPIRED
+TroubleshootMessage: null
+
+dn: PTAErrorcode=118,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: SERVICE_UNAVAILABLE
+ErrorSource: SERVICECALL
+HTTPCode: 404
+NativeErrorCode: 102
+PTAErrorcode: 118
+StatusCode: 200
+HTTPCodeDescription: service not found
+NativeErrorDescription: service may not be in running state or wrong endpoin
+ t
+NativeErrorMessage: SERVICE_UNAVAILABLE
+TroubleshootMessage: null
+
+dn: PTAErrorcode=119,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INTERNAL_ERROR
+ErrorSource: SERVICECALL
+HTTPCode: 500
+NativeErrorCode: 103
+PTAErrorcode: 119
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: Using wrong IP address in connection string
+NativeErrorMessage: INTERNAL_ERROR
+TroubleshootMessage: null
+
+dn: PTAErrorcode=120,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: test
+ErrorSource: KEYCLOAK
+HTTPCode: 402
+NativeErrorCode: 101
+PTAErrorcode: 120
+StatusCode: 200
+HTTPCodeDescription: connection refused
+NativeErrorDescription: connection refused
+NativeErrorMessage:: Y29ubmVjdGlvbiByZWZ1c2VkIA==
+TroubleshootMessage: null
+
+dn: PTAErrorcode=121,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: test
+ErrorSource: KEYCLOAK
+HTTPCode: 402
+NativeErrorCode: 401
+PTAErrorcode: 121
+StatusCode: 200
+HTTPCodeDescription: Authentication Failure
+NativeErrorDescription: invalid userName or password
+NativeErrorMessage: INVALID_LOGIN_CREDENTIALS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=122,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: test
+ErrorSource: KEYCLOAK
+HTTPCode: 404
+NativeErrorCode: 404
+PTAErrorcode: 122
+StatusCode: 200
+HTTPCodeDescription: Not Found
+NativeErrorDescription: invalid endpoint
+NativeErrorMessage: NOT_FOUND
+TroubleshootMessage: null
+
+dn: PTAErrorcode=123,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: test
+ErrorSource: KEYCLOAK
+HTTPCode: 400
+NativeErrorCode: 400
+PTAErrorcode: 123
+StatusCode: 200
+HTTPCodeDescription: Bad Request
+NativeErrorDescription: invalid request
+NativeErrorMessage: BAD_REQUEST
+TroubleshootMessage: null
+
+dn: PTAErrorcode=124,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: test
+ErrorSource: KEYCLOAK
+HTTPCode: 500
+NativeErrorCode: 500
+PTAErrorcode: 124
+StatusCode: 200
+HTTPCodeDescription: internal error
+NativeErrorDescription: invalid request
+NativeErrorMessage: INTERNAL_ERROR
+TroubleshootMessage: null
+
+dn: PTAErrorcode=125,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INVALID_CREDENTIALS
+ErrorSource: LDAP
+HTTPCode: 401
+NativeErrorCode: 401
+PTAErrorcode: 125
+StatusCode: 200
+HTTPCodeDescription: UNAUTHORIZED
+NativeErrorDescription: request rejected due to incorrect passwords
+NativeErrorMessage: INVALID_CREDENTIALS
+TroubleshootMessage: null
+
+dn: PTAErrorcode=126,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: OBJECT_CLASS_VIOLATION
+ErrorSource: LDAP
+HTTPCode: 406
+NativeErrorCode: 65
+PTAErrorcode: 126
+StatusCode: 200
+HTTPCodeDescription: NOT ACCEPTABLE
+NativeErrorDescription: Some majority attribute missing
+NativeErrorMessage: OBJECT_CLASS_VIOLATION
+TroubleshootMessage: null
+
+dn: PTAErrorcode=127,ou=ptapluserrorcode,dc=FinoPtaPlus,dc=com
+objectClass: errorcodeptaplus
+objectClass: top
+ErrorMessage: INSUFFICIENT_ACCESS_RIGHTS
+ErrorSource: LDAP
+HTTPCode: 403
+NativeErrorCode: 403
+PTAErrorcode: 127
+StatusCode: 200
+HTTPCodeDescription: INSUFFICIENT_ACCESS_RIGHTS
+NativeErrorDescription: request rejected due to insufficient accress rights
+NativeErrorMessage: INSUFFICIENT_ACCESS_RIGHTS
+TroubleshootMessage: null

@@ -1,0 +1,30 @@
+#business type
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( mCategory-oid NAME 'mCategory' DESC 'mCategory,string' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( mCode-oid NAME 'mCode' DESC 'mCode,String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( businessTypeUid-oid NAME 'businessTypeUid' DESC 'integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( businessTypes-oid NAME 'businessTypes' SUP top STRUCTURAL MUST (businessTypeUid $ mCode) MAY (mCategory $ member ) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=businessTypeUid,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: businessTypeUid
+dnatype: businessTypeUid
+dnafilter: (objectclass=businessTypes)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1

@@ -1,0 +1,137 @@
+#accounts
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accstatusCode-oid NAME 'accstatusCode' DESC 'IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accStatus-oid NAME 'accStatus' DESC 'IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accType-oid NAME 'accType' DESC 'IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isAccountHold-oid NAME 'isAccountHold' DESC 'Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isAccountRestricted-oid NAME 'isAccountRestricted' DESC 'isAccountRestricted, Boolean' EQUALITY  booleanMatch  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+#
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountLastRestrictionApplyDate-oid NAME 'accountLastRestrictionApplyDate' DESC 'GeneralizedTime' EQUALITY generalizedTimeMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountLastRestrictionApplyUser-oid NAME 'accountLastRestrictionApplyUser' DESC 'DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountLastRestrictionRemovalDate-oid NAME 'accountLastRestrictionRemovalDate' DESC 'GeneralizedTime' EQUALITY generalizedTimeMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountLastRestrictionRemovalUser-oid NAME 'accountLastRestrictionRemovalUser' DESC 'DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountMinBalanceFixed-oid NAME 'accountMinBalanceFixed' DESC 'DirectoryString' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountMinBalancePercent-oid NAME 'accountMinBalancePercent' DESC 'DirectoryString' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( cifId-oid NAME 'cifId' DESC 'DN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isClosed-oid NAME 'isClosed' DESC 'Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( isDormant-oid NAME 'isDormant' DESC 'Boolean' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+# new added
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountsUid-oid NAME 'accountsUid' DESC 'integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( creationDate-oid NAME 'creationDate' DESC 'GeneralizedTime' EQUALITY generalizedTimeMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountNum-oid NAME 'accountNum' DESC 'IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( cbsCustomerId-oid NAME 'cbsCustomerId' DESC 'IA5String' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( activationAuditTrail-oid NAME 'activationAuditTrail' DESC 'activationAuditTrail' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( accountRestrictionApplyAuditTrail-oid NAME 'accountRestrictionApplyAuditTrail' DESC 'accountRestrictionApplyAuditTrail' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( deactivationAuditTrail-oid NAME 'deactivationAuditTrail' DESC 'deactivationAuditTrail' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( lastDeActivationDate-oid NAME 'lastDeActivationDate' DESC 'Entity Last DeActivation Date' SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( finoPTAaccount-oid NAME 'finoPTAaccount' SUP top STRUCTURAL MUST ( accountNum $ cbsCustomerId $ isActive $ creationDate $ creator $ lastActivationDate $ lastActivationUser $ isAccountRestricted ) MAY ( cifId $ accountMinBalanceFixed $ accountMinBalancePercent $ isDormant $ isClosed $ activationAuditTrail $ lastDeActivationDate $ lastDeActivationUser $ deactivationAuditTrail $ accountLastRestrictionApplyDate $ accountLastRestrictionApplyUser $ accountRestrictionApplyAuditTrail $ accountLastRestrictionRemovalDate $ accountLastRestrictionRemovalUser ) X-ORIGIN ( 'Fino PTA' 'user defined' ) )
+
+dn: cn=accountsUid,cn=Distributed Numeric Assignment Plugin,cn=plugins,cn=config
+objectClass: top
+objectClass: extensibleObject
+cn: accountsUid
+dnatype: accountsUid
+dnafilter: (objectclass=accounts)
+dnascope: dc=FinoPtaPlus,dc=com
+dnanextvalue: 1

@@ -1,0 +1,56 @@
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( PTAErrorcode-oid NAME 'PTAErrorcode' DESC 'PTAErrorcode, Integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( ErrorSource-oid NAME 'ErrorSource' DESC 'ErrorSource, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( NativeErrorCode-oid NAME 'NativeErrorCode' DESC 'NativeErrorCode, Integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( NativeErrorMessage-oid NAME 'NativeErrorMessage' DESC 'NativeErrorMessage, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( NativeErrorDescription-oid NAME 'NativeErrorDescription' DESC 'NativeErrorDescription, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( HTTPCode-oid NAME 'HTTPCode' DESC 'HTTPCode, Integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( StatusCode-oid NAME 'StatusCode' DESC 'StatusCode, Integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( HTTPCodeDescription-oid NAME 'HTTPCodeDescription' DESC 'HTTPCodeDescription, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( ErrorMessage-oid NAME 'ErrorMessage' DESC 'ErrorMessage, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( TroubleshootMessage-oid NAME 'TroubleshootMessage' DESC 'TroubleshootMessage, stringIA5' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( errorcodeptaplus-oid NAME 'errorcodeptaplus' SUP top STRUCTURAL MUST (ErrorSource $ PTAErrorcode $ NativeErrorCode $ HTTPCode $ StatusCode $ ErrorMessage ) MAY (TroubleshootMessage $ HTTPCodeDescription $ NativeErrorMessage $ NativeErrorDescription) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )

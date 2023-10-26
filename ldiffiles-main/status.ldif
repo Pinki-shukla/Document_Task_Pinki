@@ -1,0 +1,15 @@
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( statusCode-oid NAME 'statusCode' DESC 'statusCode,string' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: attributetypes
+attributetypes: ( id-oid NAME 'id' DESC 'id,integer' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )
+
+dn: cn=schema
+changetype: modify
+add: objectclasses
+objectclasses: ( statusMaster-oid NAME 'statusMaster' SUP top STRUCTURAL MUST (id $ statusCode ) MAY ( ) X-ORIGIN ( 'Fino PtaPlus' 'user defined' ) )

@@ -1,0 +1,19 @@
+dn: uId=admin5,ou=activeusers,ou=users,dc=FinoPtaPlus,dc=com
+objectClass: finoUsers
+objectClass: top
+createdDate: 20230803000000.000Z
+email: finouser1@gmail.com
+firstLogin: FALSE
+firstName: finouser1
+id: 5
+lastModifiedBy: modifiedBy=Admin1
+lastModifiedOn: 20230803004400.367Z
+lastName: kumar
+memberOf: cn=admin,ou=roles,dc=FinoPtaPlus,dc=com
+memberOf: cn=finousers,ou=groups,dc=FinoPtaPlus,dc=com
+uid: admin5
+userPassword: redhat
+createdBy: cn=Directory Manager
+primaryMobile: 1000120006
+profileImage: abc.png
+
