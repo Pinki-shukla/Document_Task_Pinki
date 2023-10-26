@@ -138,7 +138,7 @@ And now create all files one by one by using vim command and add data .
 vim errorCode.ldif
 ```
 
-![Alt text](/images/add%20error.ldif%20file.png)
+![Alt text](./images/add%20error.ldif%20file.png)
 
 
 ```
@@ -4428,7 +4428,7 @@ The command is used to add data to an LDAP directory by connecting to the LDAP s
 
 
 
-![Alt text](/images/ldap%20add.png)<br>
+![Alt text](./images/ldap%20add.png)<br>
 
 - <b>Note:-</b> Here you have to enter the password which have been given while creating LDAP Server.<br>
 
