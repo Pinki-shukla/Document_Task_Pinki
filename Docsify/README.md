@@ -80,7 +80,7 @@ vim Dockerfile
 
 
 
-![](.02.png)
+![](02.png)
 
 ## Step 4:-Create  file:
 ```
